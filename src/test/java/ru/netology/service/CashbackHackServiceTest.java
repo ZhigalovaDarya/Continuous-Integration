@@ -19,4 +19,13 @@ class CashbackHackServiceTest {
         assertEquals(expected, actual, message);
     }
 
+    @Test
+    void NothingBought() {
+        CashbackHackService service = new CashbackHackService();
+        int amount = 0;
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            service.remain(amount);
+        });
+    }
 }
